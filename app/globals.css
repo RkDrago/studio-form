@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink text-sand font-sans antialiased;
+    background-image: radial-gradient(
+      120% 80% at 50% -10%,
+      rgba(200, 162, 90, 0.14) 0%,
+      rgba(11, 11, 12, 0) 55%
+    );
+    background-repeat: no-repeat;
+  }
+
+  ::selection {
+    @apply bg-brass/30 text-sand;
+  }
+
+  /* Slim, brand-neutral scrollbars */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0b0b0c;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2a2a30;
+    border-radius: 999px;
+    border: 2px solid #0b0b0c;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3a3a42;
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-shell px-6 sm:px-10 lg:px-16;
+  }
+
+  .eyebrow {
+    @apply text-[11px] uppercase tracking-eyebrow text-brass;
+  }
+
+  .rule {
+    @apply h-px w-full bg-ink-line;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[13px]
+      font-medium uppercase tracking-[0.14em] transition-all duration-300 disabled:cursor-not-allowed
+      disabled:opacity-40;
+  }
+
+  .btn-primary {
+    @apply btn bg-brass text-ink hover:bg-brass-light;
+  }
+
+  .btn-ghost {
+    @apply btn border border-ink-line text-sand hover:border-brass hover:text-brass;
+  }
+
+  .field {
+    @apply w-full rounded-lg border border-ink-line bg-ink-soft px-4 py-3 text-sm text-sand
+      placeholder:text-sand-muted/60 outline-none transition-colors focus:border-brass;
+  }
+
+  .label {
+    @apply mb-2 block text-[11px] uppercase tracking-[0.16em] text-sand-muted;
+  }
+
+  .card-surface {
+    @apply rounded-2xl border border-ink-line bg-ink-soft/80 backdrop-blur;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
