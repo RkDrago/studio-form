@@ -23,7 +23,7 @@ export default function ProjectGallery({
       <button
         type="button"
         onClick={() => active.type === "IMAGE" && setLightbox(true)}
-        className="relative block aspect-[16/9] w-full overflow-hidden rounded-2xl border border-ink-line bg-ink grain"
+        className="relative block aspect-[16/9] w-full overflow-hidden rounded-2xl border border-paper-line bg-paper-soft grain"
       >
         {active.type === "VIDEO" ? (
           <video
@@ -53,12 +53,12 @@ export default function ProjectGallery({
               key={m.id}
               onClick={() => setIndex(i)}
               className={`relative aspect-[4/3] overflow-hidden rounded-lg border transition-colors ${
-                i === index ? "border-brass" : "border-ink-line hover:border-sand-muted"
+                i === index ? "border-brass" : "border-paper-line hover:border-ink-muted"
               }`}
               aria-label={`Show asset ${i + 1}`}
             >
               {m.type === "VIDEO" ? (
-                <span className="flex h-full w-full items-center justify-center bg-ink text-[10px] uppercase tracking-[0.14em] text-sand-muted">
+                <span className="flex h-full w-full items-center justify-center bg-paper-soft text-[10px] uppercase tracking-[0.14em] text-ink-muted">
                   Video
                 </span>
               ) : (
@@ -88,7 +88,7 @@ export default function ProjectGallery({
               />
             </div>
             <button
-              className="absolute right-6 top-6 flex h-10 w-10 items-center justify-center rounded-full border border-ink-line text-sand-muted hover:border-brass hover:text-brass"
+              className="absolute right-6 top-6 flex h-10 w-10 items-center justify-center rounded-full border border-white/25 text-white/70 hover:border-brass-light hover:text-brass-light"
               aria-label="Close lightbox"
             >
               ✕

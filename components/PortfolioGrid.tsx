@@ -82,8 +82,8 @@ export default function PortfolioGrid({
             onClick={() => setCategory(c)}
             className={`rounded-full border px-5 py-2 text-[11px] uppercase tracking-[0.16em] transition-all duration-300 ${
               category === c
-                ? "border-brass bg-brass text-ink"
-                : "border-ink-line text-sand-muted hover:border-brass hover:text-brass"
+                ? "border-brass bg-brass text-white"
+                : "border-paper-line text-ink-muted hover:border-brass hover:text-brass"
             }`}
           >
             {c}
@@ -102,7 +102,7 @@ export default function PortfolioGrid({
       {filtered.length === 0 && (
         <div className="card-surface mt-12 p-12 text-center">
           <p className="font-display text-xl">Nothing in this selection yet</p>
-          <p className="mt-3 text-sm text-sand-muted">
+          <p className="mt-3 text-sm text-ink-muted">
             Adjust the sector filter or add a project from the{" "}
             <Link href="/admin" className="text-brass underline">
               content studio

@@ -7,7 +7,7 @@ export default function NotFound() {
       <h1 className="mt-6 font-display text-[clamp(2rem,5vw,3.6rem)] leading-tight">
         That drawing isn&apos;t in the set
       </h1>
-      <p className="mt-5 max-w-md text-sm leading-relaxed text-sand-muted">
+      <p className="mt-5 max-w-md text-sm leading-relaxed text-ink-muted">
         The project you were looking for has either been unpublished or never
         existed. Head back to the portfolio to browse what&apos;s live.
       </p>

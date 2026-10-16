@@ -128,9 +128,9 @@ export default function ContentManagerTab({
         </button>
       </div>
 
-      <div className="overflow-hidden rounded-2xl border border-ink-line">
+      <div className="overflow-hidden rounded-2xl border border-paper-line">
         <table className="w-full text-left text-sm">
-          <thead className="bg-ink text-[10px] uppercase tracking-[0.16em] text-sand-muted">
+          <thead className="bg-paper-soft text-[10px] uppercase tracking-[0.16em] text-ink-muted">
             <tr>
               <th className="px-5 py-4 font-normal">Project</th>
               <th className="hidden px-5 py-4 font-normal md:table-cell">Sector</th>
@@ -141,17 +141,17 @@ export default function ContentManagerTab({
           </thead>
           <tbody>
             {filtered.map((p) => (
-              <tr key={p.id} className="border-t border-ink-line bg-ink-soft/60">
+              <tr key={p.id} className="border-t border-paper-line bg-paper-soft/60">
                 <td className="px-5 py-4">
-                  <p className="text-sand">{p.title}</p>
-                  <p className="mt-1 text-[10px] uppercase tracking-[0.14em] text-sand-muted">
+                  <p className="text-ink">{p.title}</p>
+                  <p className="mt-1 text-[10px] uppercase tracking-[0.14em] text-ink-muted">
                     {p.location} · {p.media.length} assets · {p.year}
                   </p>
                 </td>
-                <td className="hidden px-5 py-4 text-sand-muted md:table-cell">
+                <td className="hidden px-5 py-4 text-ink-muted md:table-cell">
                   {p.category}
                 </td>
-                <td className="hidden px-5 py-4 text-sand-muted lg:table-cell">
+                <td className="hidden px-5 py-4 text-ink-muted lg:table-cell">
                   {p.clientName}
                 </td>
                 <td className="px-5 py-4">
@@ -159,7 +159,7 @@ export default function ContentManagerTab({
                     className={`rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.14em] ${
                       p.status === "PUBLISHED"
                         ? "bg-brass/15 text-brass"
-                        : "bg-ink-line text-sand-muted"
+                        : "bg-paper-line text-ink-muted"
                     }`}
                   >
                     {p.status}
@@ -175,7 +175,7 @@ export default function ContentManagerTab({
                     <button
                       disabled={busy === p.slug}
                       onClick={() => openEditor(p)}
-                      className="text-sand-muted transition-colors hover:text-brass"
+                      className="text-ink-muted transition-colors hover:text-brass"
                     >
                       Edit
                     </button>
@@ -188,7 +188,7 @@ export default function ContentManagerTab({
                           p.status === "PUBLISHED" ? "Moved to draft." : "Published.",
                         )
                       }
-                      className="text-sand-muted transition-colors hover:text-brass"
+                      className="text-ink-muted transition-colors hover:text-brass"
                     >
                       {p.status === "PUBLISHED" ? "Unpublish" : "Publish"}
                     </button>
@@ -201,14 +201,14 @@ export default function ContentManagerTab({
                           p.featured ? "Removed from featured." : "Marked as featured.",
                         )
                       }
-                      className="text-sand-muted transition-colors hover:text-brass"
+                      className="text-ink-muted transition-colors hover:text-brass"
                     >
                       {p.featured ? "Unfeature" : "Feature"}
                     </button>
                     <button
                       disabled={busy === p.slug}
                       onClick={() => remove(p)}
-                      className="text-red-400/80 transition-colors hover:text-red-300"
+                      className="text-red-600/90 transition-colors hover:text-red-700"
                     >
                       Delete
                     </button>
@@ -218,8 +218,8 @@ export default function ContentManagerTab({
             ))}
 
             {filtered.length === 0 && (
-              <tr className="border-t border-ink-line bg-ink-soft/40">
-                <td colSpan={5} className="px-5 py-12 text-center text-sand-muted">
+              <tr className="border-t border-paper-line bg-paper-soft/40">
+                <td colSpan={5} className="px-5 py-12 text-center text-ink-muted">
                   No projects match that search.
                 </td>
               </tr>
@@ -237,7 +237,7 @@ export default function ContentManagerTab({
                 setEditing(null);
                 setDraft(null);
               }}
-              className="text-[11px] uppercase tracking-[0.16em] text-sand-muted hover:text-brass"
+              className="text-[11px] uppercase tracking-[0.16em] text-ink-muted hover:text-brass"
             >
               Close
             </button>
@@ -312,7 +312,7 @@ export default function ContentManagerTab({
             </div>
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-ink-line pt-6">
+          <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-paper-line pt-6">
             <button
               onClick={() => patch(editing, draft, "Project saved.")}
               disabled={busy === editing}
@@ -320,7 +320,7 @@ export default function ContentManagerTab({
             >
               {busy === editing ? "Saving…" : "Save changes"}
             </button>
-            <label className="flex items-center gap-3 text-sm text-sand-muted">
+            <label className="flex items-center gap-3 text-sm text-ink-muted">
               <input
                 type="checkbox"
                 className="h-4 w-4 accent-brass"

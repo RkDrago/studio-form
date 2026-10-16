@@ -58,28 +58,28 @@ export default function ProjectModal({
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 32, stiffness: 280 }}
-            className="relative flex h-full w-full max-w-3xl flex-col overflow-y-auto border-l border-ink-line bg-ink-soft"
+            className="relative flex h-full w-full max-w-3xl flex-col overflow-y-auto border-l border-paper-line bg-paper-soft"
           >
-            <div className="sticky top-0 z-10 flex items-center justify-between border-b border-ink-line bg-ink-soft/95 px-6 py-4 backdrop-blur">
+            <div className="sticky top-0 z-10 flex items-center justify-between border-b border-paper-line bg-paper-soft/95 px-6 py-4 backdrop-blur">
               <p className="eyebrow">{project.category} Portfolio</p>
               <div className="flex items-center gap-3">
                 <Link
                   href={`/project/${project.slug}`}
-                  className="text-[11px] uppercase tracking-[0.16em] text-sand-muted transition-colors hover:text-brass"
+                  className="text-[11px] uppercase tracking-[0.16em] text-ink-muted transition-colors hover:text-brass"
                 >
                   Full page
                 </Link>
                 <button
                   onClick={onClose}
                   aria-label="Close"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-ink-line text-sand-muted transition-colors hover:border-brass hover:text-brass"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-paper-line text-ink-muted transition-colors hover:border-brass hover:text-brass"
                 >
                   ✕
                 </button>
               </div>
             </div>
 
-            <div className="relative aspect-[16/10] w-full bg-ink">
+            <div className="relative aspect-[16/10] w-full bg-paper-soft">
               {active?.type === "VIDEO" ? (
                 <video
                   key={active.id}
@@ -103,18 +103,18 @@ export default function ProjectModal({
             </div>
 
             {gallery.length > 1 && (
-              <div className="flex gap-2 overflow-x-auto border-b border-ink-line px-6 py-4">
+              <div className="flex gap-2 overflow-x-auto border-b border-paper-line px-6 py-4">
                 {gallery.map((m, i) => (
                   <button
                     key={m.id}
                     onClick={() => setActiveIndex(i)}
                     className={`relative h-16 w-24 flex-none overflow-hidden rounded-md border transition-colors ${
-                      i === activeIndex ? "border-brass" : "border-ink-line"
+                      i === activeIndex ? "border-brass" : "border-paper-line"
                     }`}
                     aria-label={`Asset ${i + 1}`}
                   >
                     {m.type === "VIDEO" ? (
-                      <span className="flex h-full w-full items-center justify-center bg-ink text-[10px] uppercase tracking-[0.16em] text-sand-muted">
+                      <span className="flex h-full w-full items-center justify-center bg-paper-soft text-[10px] uppercase tracking-[0.16em] text-ink-muted">
                         Video
                       </span>
                     ) : (
@@ -133,11 +133,11 @@ export default function ProjectModal({
 
             <div className="px-8 py-8">
               <h2 className="font-display text-3xl leading-tight">{project.title}</h2>
-              <p className="mt-4 text-[15px] leading-relaxed text-sand-muted">
+              <p className="mt-4 text-[15px] leading-relaxed text-ink-muted">
                 {project.description}
               </p>
 
-              <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-6 border-t border-ink-line pt-8 sm:grid-cols-3">
+              <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-6 border-t border-paper-line pt-8 sm:grid-cols-3">
                 {[
                   ["Client", project.clientName],
                   ["Location", project.location],
@@ -147,7 +147,7 @@ export default function ProjectModal({
                   ["Assets", `${project.media.length} files`],
                 ].map(([k, v]) => (
                   <div key={k}>
-                    <dt className="text-[10px] uppercase tracking-[0.16em] text-sand-muted">
+                    <dt className="text-[10px] uppercase tracking-[0.16em] text-ink-muted">
                       {k}
                     </dt>
                     <dd className="mt-2 text-sm">{v}</dd>
@@ -162,7 +162,7 @@ export default function ProjectModal({
                     {project.scope.map((s) => (
                       <li
                         key={s}
-                        className="rounded-full border border-ink-line px-3 py-1 text-[11px] uppercase tracking-[0.14em] text-sand-muted"
+                        className="rounded-full border border-paper-line px-3 py-1 text-[11px] uppercase tracking-[0.14em] text-ink-muted"
                       >
                         {s}
                       </li>
@@ -187,7 +187,7 @@ export default function ProjectModal({
                 </div>
               )}
 
-              <div className="mt-10 flex flex-wrap gap-3 border-t border-ink-line pt-8">
+              <div className="mt-10 flex flex-wrap gap-3 border-t border-paper-line pt-8">
                 <a href="mailto:studio@studioform.in" className="btn-primary">
                   Enquire about this project
                 </a>

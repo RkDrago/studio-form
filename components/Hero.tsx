@@ -28,7 +28,7 @@ export default function Hero({
             </Reveal>
 
             <Reveal delay={0.16}>
-              <p className="mt-8 max-w-xl text-[15px] leading-relaxed text-sand-muted">
+              <p className="mt-8 max-w-xl text-[15px] leading-relaxed text-ink-muted">
                 STUDIOFORM designs and delivers commercial workplaces,
                 hospitality venues, retail flagships and residential towers -
                 from strategy and space planning through bespoke joinery,
@@ -49,21 +49,21 @@ export default function Hero({
             </Reveal>
 
             <Reveal delay={0.32}>
-              <dl className="mt-14 grid max-w-lg grid-cols-3 gap-6 border-t border-ink-line pt-8">
+              <dl className="mt-14 grid max-w-lg grid-cols-3 gap-6 border-t border-paper-line pt-8">
                 <div>
-                  <dt className="text-[10px] uppercase tracking-eyebrow text-sand-muted">
+                  <dt className="text-[10px] uppercase tracking-eyebrow text-ink-muted">
                     Projects
                   </dt>
                   <dd className="mt-2 font-display text-3xl">{stats.projects}</dd>
                 </div>
                 <div>
-                  <dt className="text-[10px] uppercase tracking-eyebrow text-sand-muted">
+                  <dt className="text-[10px] uppercase tracking-eyebrow text-ink-muted">
                     Media assets
                   </dt>
                   <dd className="mt-2 font-display text-3xl">{stats.media}</dd>
                 </div>
                 <div>
-                  <dt className="text-[10px] uppercase tracking-eyebrow text-sand-muted">
+                  <dt className="text-[10px] uppercase tracking-eyebrow text-ink-muted">
                     Sectors
                   </dt>
                   <dd className="mt-2 font-display text-3xl">
@@ -78,7 +78,7 @@ export default function Hero({
             <Reveal delay={0.2} className="lg:col-span-5">
               <Link
                 href={`/project/${featured.slug}`}
-                className="group relative block overflow-hidden rounded-3xl border border-ink-line grain"
+                className="group relative block overflow-hidden rounded-3xl border border-paper-line grain"
               >
                 <div className="relative aspect-[4/5] w-full">
                   <Image
@@ -89,15 +89,17 @@ export default function Hero({
                     sizes="(max-width: 1024px) 100vw, 40vw"
                     className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-ink/5" />
                 </div>
 
                 <div className="absolute inset-x-0 bottom-0 p-7">
-                  <p className="eyebrow">Featured · {featured.category}</p>
-                  <h2 className="mt-3 font-display text-2xl leading-snug">
+                  <p className="eyebrow text-brass-light">
+                    Featured · {featured.category}
+                  </p>
+                  <h2 className="mt-3 font-display text-2xl leading-snug text-white">
                     {featured.title}
                   </h2>
-                  <p className="mt-2 text-xs uppercase tracking-[0.16em] text-sand-muted">
+                  <p className="mt-2 text-xs uppercase tracking-[0.16em] text-white/70">
                     {featured.location} · {featured.sizeSqft} sq ft · {featured.year}
                   </p>
                 </div>

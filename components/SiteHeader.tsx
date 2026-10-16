@@ -9,13 +9,13 @@ const NAV = [
 
 export default function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-ink-line/80 bg-ink/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 border-b border-paper-line/80 bg-paper/80 backdrop-blur-xl">
       <div className="shell flex h-20 items-center justify-between">
         <Link href="/" className="group flex items-baseline gap-3">
-          <span className="font-display text-2xl tracking-[0.2em] text-sand">
+          <span className="font-display text-2xl tracking-[0.2em] text-ink">
             STUDIOFORM
           </span>
-          <span className="hidden text-[10px] uppercase tracking-eyebrow text-sand-muted sm:block">
+          <span className="hidden text-[10px] uppercase tracking-eyebrow text-ink-muted sm:block">
             Interior Architecture
           </span>
         </Link>
@@ -25,7 +25,7 @@ export default function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-[12px] uppercase tracking-[0.18em] text-sand-muted transition-colors hover:text-brass"
+              className="text-[12px] uppercase tracking-[0.18em] text-ink-muted transition-colors hover:text-brass"
             >
               {item.label}
             </Link>

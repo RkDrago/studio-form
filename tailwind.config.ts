@@ -9,19 +9,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Light surfaces: page, raised panels, hairlines
+        paper: {
+          DEFAULT: "#ffffff",
+          soft: "#f7f6f3",
+          line: "#e6e2da",
+        },
+        // Dark: body copy on white, and scrims/overlays on top of photography
         ink: {
-          DEFAULT: "#0b0b0c",
-          soft: "#131316",
-          line: "#26262b",
+          DEFAULT: "#17171c",
+          muted: "#6d6d75",
         },
-        sand: {
-          DEFAULT: "#e8e2d8",
-          muted: "#a8a29a",
-        },
+        // Warm metal accent; DEFAULT passes AA on white, light is for dark scrims
         brass: {
-          DEFAULT: "#c8a25a",
-          light: "#e0c084",
-          dark: "#8f7132",
+          DEFAULT: "#836726",
+          light: "#d8bd7f",
+          dark: "#5f4b1b",
         },
       },
       fontFamily: {
@@ -33,6 +36,10 @@ const config: Config = {
       },
       maxWidth: {
         shell: "1440px",
+      },
+      boxShadow: {
+        soft: "0 1px 2px rgba(23, 23, 28, 0.04), 0 14px 34px -18px rgba(23, 23, 28, 0.18)",
+        lift: "0 2px 6px rgba(23, 23, 28, 0.05), 0 26px 50px -24px rgba(23, 23, 28, 0.28)",
       },
     },
   },

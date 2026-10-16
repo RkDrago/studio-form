@@ -41,7 +41,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
   return (
     <article className="pb-24">
-      <header className="relative h-[62vh] min-h-[420px] w-full overflow-hidden border-b border-ink-line">
+      <header className="relative h-[62vh] min-h-[420px] w-full overflow-hidden border-b border-paper-line">
         <Image
           src={project.coverUrl}
           alt={project.title}
@@ -55,12 +55,12 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         <div className="shell absolute inset-x-0 bottom-0 pb-12">
           <Link
             href="/#work"
-            className="text-[11px] uppercase tracking-[0.18em] text-sand-muted transition-colors hover:text-brass"
+            className="text-[11px] uppercase tracking-[0.18em] text-white/70 transition-colors hover:text-brass-light"
           >
             ← Back to work
           </Link>
-          <p className="eyebrow mt-6">{project.category}</p>
-          <h1 className="mt-4 max-w-3xl font-display text-[clamp(2.2rem,5vw,4rem)] leading-[1.05]">
+          <p className="eyebrow mt-6 text-brass-light">{project.category}</p>
+          <h1 className="mt-4 max-w-3xl font-display text-[clamp(2.2rem,5vw,4rem)] leading-[1.05] text-white">
             {project.title}
           </h1>
         </div>
@@ -69,7 +69,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       <div className="shell grid gap-16 py-16 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <Reveal>
-            <p className="text-[17px] leading-relaxed text-sand/90">
+            <p className="text-[17px] leading-relaxed text-ink/90">
               {project.description}
             </p>
           </Reveal>
@@ -81,7 +81,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
         <aside className="lg:col-span-5 lg:pl-10">
           <Reveal delay={0.1}>
-            <dl className="grid grid-cols-2 gap-x-6 gap-y-7 border-t border-ink-line pt-8">
+            <dl className="grid grid-cols-2 gap-x-6 gap-y-7 border-t border-paper-line pt-8">
               {[
                 ["Client", project.clientName],
                 ["Location", project.location],
@@ -91,7 +91,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                 ["Assets", `${project.media.length} files`],
               ].map(([k, v]) => (
                 <div key={k}>
-                  <dt className="text-[10px] uppercase tracking-[0.16em] text-sand-muted">
+                  <dt className="text-[10px] uppercase tracking-[0.16em] text-ink-muted">
                     {k}
                   </dt>
                   <dd className="mt-2 text-sm">{v}</dd>
@@ -106,7 +106,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                   {project.scope.map((s) => (
                     <li
                       key={s}
-                      className="flex items-center gap-3 text-sm text-sand-muted"
+                      className="flex items-center gap-3 text-sm text-ink-muted"
                     >
                       <span className="h-1 w-1 rounded-full bg-brass" />
                       {s}
@@ -135,7 +135,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             {project.tags.length > 0 && (
               <div className="mt-10">
                 <p className="eyebrow">Tags</p>
-                <p className="mt-4 text-xs uppercase tracking-[0.14em] text-sand-muted">
+                <p className="mt-4 text-xs uppercase tracking-[0.14em] text-ink-muted">
                   {project.tags.join(" · ")}
                 </p>
               </div>
@@ -149,14 +149,14 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       </div>
 
       {others.length > 0 && (
-        <section className="shell border-t border-ink-line pt-16">
+        <section className="shell border-t border-paper-line pt-16">
           <p className="eyebrow">More Work</p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {others.map((p) => (
               <Link
                 key={p.id}
                 href={`/project/${p.slug}`}
-                className="group relative block overflow-hidden rounded-2xl border border-ink-line grain"
+                className="group relative block overflow-hidden rounded-2xl border border-paper-line grain"
               >
                 <div className="relative aspect-[4/3]">
                   <Image
@@ -169,10 +169,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                   <div className="absolute inset-0 bg-gradient-to-t from-ink to-transparent" />
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-5">
-                  <p className="text-[10px] uppercase tracking-[0.16em] text-brass">
+                  <p className="text-[10px] uppercase tracking-[0.16em] text-brass-light">
                     {p.category}
                   </p>
-                  <h3 className="mt-2 font-display text-lg">{p.title}</h3>
+                  <h3 className="mt-2 font-display text-lg text-white">{p.title}</h3>
                 </div>
               </Link>
             ))}

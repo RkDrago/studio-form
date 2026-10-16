@@ -329,7 +329,7 @@ export default function AddProjectTab({
             onDragOver={(e) => e.preventDefault()}
             onDrop={onDrop(pickCover)}
             onClick={() => coverInput.current?.click()}
-            className="relative flex h-44 cursor-pointer items-center justify-center overflow-hidden rounded-xl border border-dashed border-ink-line bg-ink transition-colors hover:border-brass"
+            className="relative flex h-44 cursor-pointer items-center justify-center overflow-hidden rounded-xl border border-dashed border-paper-line bg-paper-soft transition-colors hover:border-brass"
           >
             {cover ? (
               <>
@@ -343,12 +343,12 @@ export default function AddProjectTab({
                     className="object-cover"
                   />
                 )}
-                <span className="absolute bottom-3 left-3 rounded-full bg-ink/80 px-3 py-1 text-[10px] uppercase tracking-[0.14em] text-brass">
+                <span className="absolute bottom-3 left-3 rounded-full bg-ink/75 px-3 py-1 text-[10px] uppercase tracking-[0.14em] text-brass-light">
                   {cover.remoteUrl ? "Uploaded" : `Drop or click · ${cover.progress}%`}
                 </span>
               </>
             ) : (
-              <p className="px-6 text-center text-xs text-sand-muted">
+              <p className="px-6 text-center text-xs text-ink-muted">
                 Drag &amp; drop or click to choose a cover image
               </p>
             )}
@@ -372,7 +372,7 @@ export default function AddProjectTab({
                 progress: 100,
               });
             }}
-            className="mt-3 text-[11px] uppercase tracking-[0.16em] text-sand-muted transition-colors hover:text-brass"
+            className="mt-3 text-[11px] uppercase tracking-[0.16em] text-ink-muted transition-colors hover:text-brass"
           >
             Use a sample image instead
           </button>
@@ -385,17 +385,17 @@ export default function AddProjectTab({
             onDragOver={(e) => e.preventDefault()}
             onDrop={onDrop(pickGallery)}
             onClick={() => galleryInput.current?.click()}
-            className="flex h-44 cursor-pointer flex-wrap content-start gap-2 overflow-y-auto rounded-xl border border-dashed border-ink-line bg-ink p-3 transition-colors hover:border-brass"
+            className="flex h-44 cursor-pointer flex-wrap content-start gap-2 overflow-y-auto rounded-xl border border-dashed border-paper-line bg-paper-soft p-3 transition-colors hover:border-brass"
           >
             {gallery.length === 0 ? (
-              <p className="m-auto px-4 text-center text-xs text-sand-muted">
+              <p className="m-auto px-4 text-center text-xs text-ink-muted">
                 Drop many images here - they upload in parallel on save
               </p>
             ) : (
               gallery.map((g, i) => (
                 <figure
                   key={`${g.name}-${i}`}
-                  className="relative h-16 w-20 overflow-hidden rounded-md border border-ink-line"
+                  className="relative h-16 w-20 overflow-hidden rounded-md border border-paper-line"
                 >
                   <Image
                     src={g.remoteUrl ?? g.localUrl}
@@ -405,7 +405,7 @@ export default function AddProjectTab({
                     sizes="80px"
                     className="object-cover"
                   />
-                  <span className="absolute inset-x-0 bottom-0 bg-ink/80 text-center text-[9px] text-brass">
+                  <span className="absolute inset-x-0 bottom-0 bg-ink/75 text-center text-[9px] text-brass-light">
                     {g.remoteUrl ? "✓" : `${g.progress}%`}
                   </span>
                 </figure>
@@ -447,7 +447,7 @@ export default function AddProjectTab({
         </div>
       </div>
 
-      <label className="mt-8 flex items-center gap-3 text-sm text-sand-muted">
+      <label className="mt-8 flex items-center gap-3 text-sm text-ink-muted">
         <input
           type="checkbox"
           checked={form.featured}
@@ -457,7 +457,7 @@ export default function AddProjectTab({
         Feature this project on the homepage hero
       </label>
 
-      <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-ink-line pt-8">
+      <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-paper-line pt-8">
         <button onClick={handleSubmit} disabled={saving} className="btn-primary">
           {saving ? "Uploading & saving…" : "Add project"}
         </button>
@@ -476,7 +476,7 @@ export default function AddProjectTab({
             setGallery([]);
             setVideo(null);
           }}
-          className="text-[11px] uppercase tracking-[0.16em] text-sand-muted transition-colors hover:text-brass"
+          className="text-[11px] uppercase tracking-[0.16em] text-ink-muted transition-colors hover:text-brass"
         >
           Clear form
         </button>

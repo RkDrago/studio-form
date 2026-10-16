@@ -22,7 +22,7 @@ export default function ProjectCard({
       exit={{ opacity: 0, y: -12 }}
       transition={{ duration: 0.5, delay: Math.min(index * 0.05, 0.35) }}
       onClick={() => onOpen(project)}
-      className="group relative block w-full overflow-hidden rounded-2xl border border-ink-line bg-ink-soft text-left grain"
+      className="group relative block w-full overflow-hidden rounded-2xl border border-paper-line bg-paper-soft text-left grain"
     >
       <div className="relative aspect-[4/3] w-full overflow-hidden">
         <Image
@@ -34,37 +34,37 @@ export default function ProjectCard({
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/25 to-transparent opacity-90" />
 
-        <span className="absolute left-5 top-5 rounded-full border border-brass/40 bg-ink/70 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-brass backdrop-blur">
+        <span className="absolute left-5 top-5 rounded-full border border-brass-light/40 bg-ink/60 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-brass-light backdrop-blur">
           {project.category}
         </span>
 
         {project.featured && (
-          <span className="absolute right-5 top-5 text-[10px] uppercase tracking-[0.18em] text-sand-muted">
+          <span className="absolute right-5 top-5 rounded-full bg-ink/50 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-white/90 backdrop-blur">
             Featured
           </span>
         )}
 
         {project.status === "DRAFT" && (
-          <span className="absolute right-5 bottom-5 rounded-full bg-brass px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-ink">
+          <span className="absolute right-5 bottom-5 rounded-full bg-brass px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-white">
             Draft
           </span>
         )}
       </div>
 
       <div className="absolute inset-x-0 bottom-0 p-6">
-        <h3 className="font-display text-xl leading-snug text-sand">
+        <h3 className="font-display text-xl leading-snug text-white">
           {project.title}
         </h3>
-        <p className="mt-2 text-[11px] uppercase tracking-[0.16em] text-sand-muted">
+        <p className="mt-2 text-[11px] uppercase tracking-[0.16em] text-white/70">
           {project.location} · {project.sizeSqft} sq ft
         </p>
 
         <div className="mt-4 flex max-h-0 items-center gap-3 overflow-hidden opacity-0 transition-all duration-500 group-hover:max-h-12 group-hover:opacity-100">
-          <span className="text-[11px] uppercase tracking-[0.18em] text-brass">
+          <span className="text-[11px] uppercase tracking-[0.18em] text-brass-light">
             View project
           </span>
-          <span className="h-px flex-1 bg-brass/40" />
-          <span className="text-[11px] text-sand-muted">
+          <span className="h-px flex-1 bg-brass-light/40" />
+          <span className="text-[11px] text-white/70">
             {project.media.length} assets
           </span>
         </div>

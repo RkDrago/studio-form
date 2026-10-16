@@ -46,15 +46,15 @@ export default async function HomePage() {
           </h2>
         </Reveal>
 
-        <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-ink-line bg-ink-line sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-paper-line bg-paper-line sm:grid-cols-2 lg:grid-cols-4">
           {CAPABILITIES.map((c, i) => (
             <Reveal key={c.title} delay={i * 0.06}>
-              <div className="h-full bg-ink-soft p-8">
+              <div className="h-full bg-paper-soft p-8">
                 <span className="text-[11px] tracking-eyebrow text-brass">
                   0{i + 1}
                 </span>
                 <h3 className="mt-6 font-display text-xl">{c.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-sand-muted">
+                <p className="mt-3 text-sm leading-relaxed text-ink-muted">
                   {c.copy}
                 </p>
               </div>
@@ -70,7 +70,7 @@ export default async function HomePage() {
             <h2 className="mt-4 max-w-2xl font-display text-[clamp(1.8rem,3vw,2.6rem)] leading-tight">
               Planning a fit-out? Send us the brief and the floor plate.
             </h2>
-            <p className="mt-5 max-w-xl text-sm leading-relaxed text-sand-muted">
+            <p className="mt-5 max-w-xl text-sm leading-relaxed text-ink-muted">
               We respond with a capability pack, indicative programme and
               ballpark cost per square foot within two working days.
             </p>

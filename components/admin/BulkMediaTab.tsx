@@ -155,11 +155,11 @@ export default function BulkMediaTab({
         onDrop={onDrop}
         onClick={() => input.current?.click()}
         className={`flex min-h-[220px] cursor-pointer flex-col items-center justify-center rounded-2xl border border-dashed p-10 text-center transition-colors ${
-          dragging ? "border-brass bg-brass/5" : "border-ink-line hover:border-brass"
+          dragging ? "border-brass bg-brass/5" : "border-paper-line hover:border-brass"
         }`}
       >
         <p className="font-display text-2xl">Drop 200+ files here</p>
-        <p className="mt-3 max-w-md text-sm text-sand-muted">
+        <p className="mt-3 max-w-md text-sm text-ink-muted">
           Images and video upload {CONCURRENCY} at a time straight to storage -
           the server never buffers the files, so size is not a problem.
         </p>
@@ -178,12 +178,12 @@ export default function BulkMediaTab({
         <>
           <div className="card-surface p-6">
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <div className="flex flex-wrap items-center gap-6 text-[11px] uppercase tracking-[0.14em] text-sand-muted">
+              <div className="flex flex-wrap items-center gap-6 text-[11px] uppercase tracking-[0.14em] text-ink-muted">
                 <span>{rows.length} queued</span>
                 <span className="text-brass">{summary.done} done</span>
                 {summary.active > 0 && <span>{summary.active} uploading</span>}
                 {summary.failed > 0 && (
-                  <span className="text-red-400">{summary.failed} failed</span>
+                  <span className="text-red-600">{summary.failed} failed</span>
                 )}
                 <span>{summary.overall}% overall</span>
               </div>
@@ -197,14 +197,14 @@ export default function BulkMediaTab({
               </div>
             </div>
 
-            <div className="mt-5 h-1 overflow-hidden rounded-full bg-ink-line">
+            <div className="mt-5 h-1 overflow-hidden rounded-full bg-paper-line">
               <div
                 className="h-full bg-brass transition-all duration-300"
                 style={{ width: `${summary.overall}%` }}
               />
             </div>
 
-            <div className="mt-6 flex flex-wrap items-center gap-4 border-t border-ink-line pt-6">
+            <div className="mt-6 flex flex-wrap items-center gap-4 border-t border-paper-line pt-6">
               <div className="min-w-[240px] flex-1">
                 <label className="label">Assign uploaded media to</label>
                 <select
@@ -237,9 +237,9 @@ export default function BulkMediaTab({
             {rows.map((r, i) => (
               <li
                 key={`${r.file.name}-${i}`}
-                className="flex items-center gap-4 rounded-xl border border-ink-line bg-ink-soft p-3"
+                className="flex items-center gap-4 rounded-xl border border-paper-line bg-paper-soft p-3"
               >
-                <div className="relative h-14 w-16 flex-none overflow-hidden rounded-md bg-ink">
+                <div className="relative h-14 w-16 flex-none overflow-hidden rounded-md bg-paper-soft">
                   {r.file.type.startsWith("image/") ? (
                     <Image
                       src={r.localUrl}
@@ -250,29 +250,29 @@ export default function BulkMediaTab({
                       className="object-cover"
                     />
                   ) : (
-                    <span className="flex h-full w-full items-center justify-center text-[9px] uppercase tracking-[0.14em] text-sand-muted">
+                    <span className="flex h-full w-full items-center justify-center text-[9px] uppercase tracking-[0.14em] text-ink-muted">
                       Video
                     </span>
                   )}
                 </div>
 
                 <div className="min-w-0 flex-1">
-                  <p className="truncate text-xs text-sand">{r.file.name}</p>
-                  <p className="mt-1 text-[10px] uppercase tracking-[0.14em] text-sand-muted">
+                  <p className="truncate text-xs text-ink">{r.file.name}</p>
+                  <p className="mt-1 text-[10px] uppercase tracking-[0.14em] text-ink-muted">
                     {(r.file.size / 1024 / 1024).toFixed(1)} MB ·{" "}
                     <span
                       className={
                         r.status === "done"
                           ? "text-brass"
                           : r.status === "error"
-                            ? "text-red-400"
+                            ? "text-red-600"
                             : undefined
                       }
                     >
                       {r.status}
                     </span>
                   </p>
-                  <div className="mt-2 h-1 overflow-hidden rounded-full bg-ink-line">
+                  <div className="mt-2 h-1 overflow-hidden rounded-full bg-paper-line">
                     <div
                       className={`h-full transition-all ${
                         r.status === "error" ? "bg-red-500" : "bg-brass"

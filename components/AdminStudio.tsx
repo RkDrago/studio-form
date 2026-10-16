@@ -60,7 +60,7 @@ export default function AdminStudio({
           <h1 className="mt-4 font-display text-[clamp(2rem,4vw,3.2rem)] leading-tight">
             Upload studio
           </h1>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-sand-muted">
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink-muted">
             Manage the portfolio, drag in bulk media and export content - all
             served from the temp data store the API routes use.
           </p>
@@ -70,7 +70,7 @@ export default function AdminStudio({
         </button>
       </div>
 
-      <dl className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-ink-line bg-ink-line sm:grid-cols-3 lg:grid-cols-6">
+      <dl className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-paper-line bg-paper-line sm:grid-cols-3 lg:grid-cols-6">
         {[
           ["Projects", stats.projects],
           ["Published", stats.published],
@@ -79,8 +79,8 @@ export default function AdminStudio({
           ["Images", stats.images],
           ["Videos", stats.videos],
         ].map(([label, value]) => (
-          <div key={String(label)} className="bg-ink-soft px-6 py-6">
-            <dt className="text-[10px] uppercase tracking-[0.16em] text-sand-muted">
+          <div key={String(label)} className="bg-paper-soft px-6 py-6">
+            <dt className="text-[10px] uppercase tracking-[0.16em] text-ink-muted">
               {label}
             </dt>
             <dd className="mt-3 font-display text-3xl">{value}</dd>
@@ -98,17 +98,17 @@ export default function AdminStudio({
                   className={`w-full rounded-xl border px-5 py-4 text-left transition-all duration-300 ${
                     tab === t.key
                       ? "border-brass bg-brass/10"
-                      : "border-ink-line hover:border-sand-muted/50"
+                      : "border-paper-line hover:border-ink-muted/50"
                   }`}
                 >
                   <span
                     className={`block text-[12px] uppercase tracking-[0.14em] ${
-                      tab === t.key ? "text-brass" : "text-sand"
+                      tab === t.key ? "text-brass" : "text-ink"
                     }`}
                   >
                     {t.label}
                   </span>
-                  <span className="mt-1 hidden text-[11px] leading-snug text-sand-muted lg:block">
+                  <span className="mt-1 hidden text-[11px] leading-snug text-ink-muted lg:block">
                     {t.hint}
                   </span>
                 </button>
@@ -159,8 +159,8 @@ export default function AdminStudio({
             exit={{ opacity: 0, y: 20 }}
             className={`fixed bottom-8 left-1/2 z-50 -translate-x-1/2 rounded-full border px-6 py-3 text-sm backdrop-blur ${
               toast.kind === "ok"
-                ? "border-brass/50 bg-brass/15 text-brass"
-                : "border-red-500/50 bg-red-500/10 text-red-300"
+                ? "border-brass/40 bg-paper text-brass"
+                : "border-red-500/30 bg-red-50 text-red-700"
             }`}
           >
             {toast.text}
